@@ -2,51 +2,51 @@
     <div class="fixed-top progress" style="height:3px;">
         <div id="progressBar" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
     </div>
-    <div class="row">
-        <div class="col-md-12 bg-white p-3 small">
-            <div class="row justify-content-around">
-                <div class="col-md-2">
-                    <div class="border-start border-dark border-5">
-                        <div class="ms-4">
-                            PERMOHONAN
-                            <span class="d-block fs-3"><?= $params->totalProduct ?></span>
-                        </div>
+    <div class="bg-white p-3">
+        <div class="row">
+            <div class="col-md-2">
+                <div class="border-start border-dark border-5">
+                    <div class="ms-4">
+                        TOTAL PERMOHONAN
+                        <span class="d-block fs-3"><?= $params->totalProduct ?></span>
                     </div>
                 </div>
-                <div class="col-md-2">
-                    <div class="border-start border-danger border-5">
-                        <div class="ms-4">
-                            VERIFIKASI
-                            <span class="d-block fs-3"><?= $params->totalVerify ?></span>
-                        </div>
+            </div>
+            <div class="col-md-2">
+                <div class="border-start border-danger border-5">
+                    <div class="ms-4">
+                        MENUNGGU VERIFIKASI
+                        <span class="d-block fs-3"><?= $params->totalVerify ?></span>
                     </div>
                 </div>
-                <div class="col-md-2">
-                    <div class="border-start border-warning border-5">
-                        <div class="ms-4">
-                            VALIDASI
-                            <span class="d-block fs-3"><?= $params->totalValidation ?></span>
-                        </div>
+            </div>
+            <div class="col-md-2">
+                <div class="border-start border-warning border-5">
+                    <div class="ms-4">
+                        MENUNGGU INFORMASI
+                        <span class="d-block fs-3"><?= $params->totalValidation ?></span>
                     </div>
                 </div>
-                <div class="col-md-2">
-                    <div class="border-start border-primary border-5">
-                        <div class="ms-4">
-                            DIPROSES
-                            <span class="d-block fs-3"><?= $params->totalProcess ?></span>
-                        </div>
+            </div>
+            <div class="col-md-2">
+                <div class="border-start border-primary border-5">
+                    <div class="ms-4">
+                        DOKUMEN DIPROSES
+                        <span class="d-block fs-3"><?= $params->totalProcess ?></span>
                     </div>
                 </div>
-                <div class="col-md-2">
-                    <div class="border-start border-success border-5">
-                        <div class="ms-4">
-                            SELESAI
-                            <span class="d-block fs-3"><?= $params->totalComplete ?></span>
-                        </div>
+            </div>
+            <div class="col-md-2">
+                <div class="border-start border-success border-5">
+                    <div class="ms-4">
+                        DOKUMEN SELESAI
+                        <span class="d-block fs-3"><?= $params->totalComplete ?></span>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="row">
         <div class="col-md-3">
             <div class="sticky-top">
                 <div class="p-3">

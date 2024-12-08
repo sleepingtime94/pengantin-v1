@@ -90,3 +90,7 @@ body {
     aspect-ratio: 16/9;
     object-fit: cover;
 }
+
+.product-item {
+    border-bottom: solid 4px #ecf0f5;
+}

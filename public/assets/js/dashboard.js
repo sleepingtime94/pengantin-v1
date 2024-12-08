@@ -24,32 +24,8 @@ function storeItem(url, params) {
       $("#loading").remove();
 
       const result = JSON.parse(response);
-      console.log(params);
-      console.log(result);
-
       $.each(result.data, function (i, row) {
-        $("#product-result").append(`
-                  <tr class="border-light bg-white small align-middle">
-                    <td colspan="3">
-                    <span class="mx-3">${formatDate(
-                      row.date_created
-                    )}</span> ${nameByStatus(row.id_status)}
-                    </td>
-                  </tr>
-                  <tr class="product-item bg-white" data-pid="${row.id}">
-                    <td>
-                    <div class="fw-bold">${row.lk_name}</div>
-                    <div class="small">${row.lk_nik}</div>
-                    <div class="smaller text-muted mt-2">${row.lk_address}</div>
-                    </td>
-                    <td>
-                    <div class="fw-bold">${row.pr_name}</div>
-                    <div class="small">${row.pr_nik}</div>
-                    <div class="smaller text-muted mt-2">${row.pr_address}</div>
-                    </td>
-                    <td class="align-middle">${nameByUser(row.id_user)}</td>
-                  </tr>
-                `);
+        $("#product-result").append(`<tr class="product-item bg-white" data-pid="${row.id}"><td class="align-middle p-4"><div class="small">${formatDate(row.date_created)}</div><div class="mt-2 smaller">${nameByStatus(row.id_status)}</div></td><td class="align-middle"><div class="fw-bold">${row.lk_name}</div><div class="small">${row.lk_nik}</div><div class="smaller text-muted">${row.lk_address}</div></td><td class="align-middle"><div class="fw-bold">${row.pr_name}</div><div class="small">${row.pr_nik}</div><div class="smaller text-muted">${row.pr_address}</div></td><td class="align-middle">${nameByUser(row.id_user)}</td></tr>`);
       });
       const foundItem = result.data;
       const totalItem = result.totalItem;
@@ -69,8 +45,8 @@ function storeItem(url, params) {
       );
 
       localStorage.setItem("currentPage", result.currentPage);
-
       localStorage.setItem("totalPage", result.totalPage);
+
       $(".product-item").click(function () {
         const pid = $(this).data("pid");
         return location.replace(`/detail/${pid}`);

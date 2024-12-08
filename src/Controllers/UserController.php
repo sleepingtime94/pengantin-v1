@@ -33,18 +33,18 @@ class UserController
 
                 echo json_encode([
                     'status' => 'success',
-                    'message' => 'Login sukses! Mengalihkan kehalaman dashboard.'
+                    'message' => 'Login sukses! Mengalihkan kehalaman dashboard'
                 ]);
             } else {
                 echo json_encode([
                     'status' => 'failed',
-                    'message' => 'Periksa kembali nama pengguna dan kata sandi.'
+                    'message' => 'Periksa kembali nama pengguna dan kata sandi'
                 ]);
             }
         } else {
             echo json_encode([
                 'status' => 'failed',
-                'message' => 'Mohon maaf, terjadi kesalahan. Silahkan coba lagi.'
+                'message' => 'Mohon maaf, terjadi kesalahan. Silahkan coba lagi'
             ]);
         }
     }

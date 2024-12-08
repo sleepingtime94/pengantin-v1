@@ -1,8 +1,11 @@
-<div class="bg-light border-bottom d-flex justify-content-between p-3 align-items-center">
-    <div class="logo fs-4 text-primary">
-        Pengantin
-    </div>
-    <div class="text-center small">
-        <?= $_SESSION['user_name'] ?> <a href="/user/logout" class="ms-3 text-decoration-none">KELUAR</a>
+<div class="header">
+    <div class="d-flex justify-content-between align-items-center">
+        <div>
+            <div class="fs-5 fw-bold">PENGANTIN</div>
+            <div class="smaller text-warning">Pengurusan Administrasi Pernikahan Terintegrasi</div>
+        </div>
+        <div class="text-center small">
+            <span class="fw-bold"><?= $_SESSION['user_name'] ?></span> <a href="/user/logout" class="ms-1 text-light text-decoration-none small">(KELUAR)</a>
+        </div>
     </div>
 </div>
