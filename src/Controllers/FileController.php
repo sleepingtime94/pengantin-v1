@@ -5,6 +5,7 @@ namespace App\Controllers;
 use Gumlet\ImageResize;
 use App\Models\FileModel;
 use App\Models\ProductModel;
+use finfo;
 
 class FileController
 {
@@ -76,5 +77,40 @@ class FileController
         ];
         $this->fileModel->createTemp($params);
         echo json_encode(['status' => 'success', 'message' => 'File berhasil ditambahkan.', 'path' => $destinationPath]);
+    }
+
+    public function redirectPath($files)
+    {
+        $possibleExtensions = ['jpg', 'jpeg', 'png'];
+        $possibleDirectories = [
+            dirname(__DIR__, 2) . '/files_tmp/',
+            dirname(__DIR__, 2) . '/files/'
+        ];
+        $originalFilePath = null;
+
+        foreach ($possibleDirectories as $directory) {
+            foreach ($possibleExtensions as $ext) {
+                $path = $directory . $files . '.' . $ext;
+                if (file_exists($path)) {
+                    $originalFilePath = $path;
+                    break 2;
+                }
+            }
+        }
+
+        if ($originalFilePath) {
+            $fileInfo = new finfo(FILEINFO_MIME_TYPE);
+            $mimeType = $fileInfo->file($originalFilePath);
+
+            header('Content-Type: ' . $mimeType);
+            header('Content-Disposition: inline; filename="' . rawurlencode(basename($originalFilePath)) . '"');
+            header('Content-Length: ' . filesize($originalFilePath));
+
+            readfile($originalFilePath);
+            exit;
+        } else {
+            http_response_code(404);
+            echo "Dokumen tidak ditemukan.";
+        }
     }
 }

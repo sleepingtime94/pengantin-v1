@@ -74,9 +74,8 @@ class ViewController
 
     public function formulir($id)
     {
-        $data = json_decode($this->product->findById($id));
-        $params = $data->data[0];
-        include_once './views/formulir.php';
+        $params = $this->product->findById($id)[0];
+        $this->render('formulir', $params, false);
     }
 
     public function register()
