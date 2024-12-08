@@ -55,6 +55,34 @@ $router->get('/file/delete/(\d+)', 'FileController@delete');
 $router->post('/client/register', 'ClientController@register');
 $router->get('/client/(\w+)', 'ViewController@verify');
 
+$router->get('/images/([a-zA-Z0-9\-_]+)', function ($files) {
+    $possibleExtensions = ['jpg', 'jpeg', 'png'];
+    $originalFilePath = null;
+
+    foreach ($possibleExtensions as $ext) {
+        $path = dirname(__DIR__, 1) . '/files_tmp/' . $files . '.' . $ext;
+        if (file_exists($path)) {
+            $originalFilePath = $path;
+            break;
+        }
+    }
+
+    if ($originalFilePath) {
+        $fileInfo = new finfo(FILEINFO_MIME_TYPE);
+        $mimeType = $fileInfo->file($originalFilePath);
+
+        header('Content-Type: ' . $mimeType);
+        header('Content-Disposition: inline; filename="' . rawurlencode(basename($originalFilePath)) . '"');
+        header('Content-Length: ' . filesize($originalFilePath));
+
+        readfile($originalFilePath);
+        exit;
+    } else {
+        http_response_code(404);
+        echo "Dokumen tidak ditemukan.";
+    }
+});
+
 $router->set404(function () {
     header('location: /');
 });

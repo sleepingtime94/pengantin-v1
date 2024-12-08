@@ -100,14 +100,14 @@ class ViewController
         $params = (object) $params;
 
         if ($navbar != false) {
-            include_once './views/layouts/header.php';
-            include_once './views/layouts/navbar.php';
-            include_once './views/' . $page . '.php';
-            include_once './views/layouts/footer.php';
+            include_once '../views/layouts/header.php';
+            include_once '../views/layouts/navbar.php';
+            include_once '../views/' . $page . '.php';
+            include_once '../views/layouts/footer.php';
         } else {
-            include_once './views/layouts/header.php';
-            include_once './views/' . $page . '.php';
-            include_once './views/layouts/footer.php';
+            include_once '../views/layouts/header.php';
+            include_once '../views/' . $page . '.php';
+            include_once '../views/layouts/footer.php';
         }
     }
 

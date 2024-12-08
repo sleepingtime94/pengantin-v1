@@ -38,7 +38,8 @@ function filterBK(inputValue, className) {
   return $(className).val(inputValue);
 }
 
-$(".button-view-image").click(function () {
+$(".button-view-image").click(function (e) {
+  e.preventDefault();
   const source = $(this).attr("src");
   const alt = $(this).attr("alt");
 

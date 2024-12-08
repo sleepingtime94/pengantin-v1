@@ -14,7 +14,7 @@ $("#login").click(function () {
       </div>
       <div class="mb-5 input-group">
       <input id="csrf-token" type="hidden" name="csrfToken" value="${csrfToken}">
-      <span class="input-group-text fs-4 bg-light captcha-text fw-bold">${capcay}</span>
+      <span class="input-group-text fs-4 bg-light fst-captcha fw-bold">${capcay}</span>
       <input type="text" id="form-input-captcha" class="form-control" placeholder="Masukkan kode captcha" autocomplete="off">
       </div>
       </div>

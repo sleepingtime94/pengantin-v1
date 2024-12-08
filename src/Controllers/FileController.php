@@ -25,7 +25,7 @@ class FileController
         $fileExtension = strtolower(pathinfo($imageFile['name'], PATHINFO_EXTENSION));
         $randomFileName = bin2hex(random_bytes(8)) . '.' . $fileExtension;
         $logs = md5(bin2hex(random_bytes(5)));
-        $destinationPath = 'files/' . $randomFileName;
+        $destinationPath = '../files/' . $randomFileName;
 
         $image->resizeToWidth(600);
         $image->save($destinationPath);
@@ -63,7 +63,7 @@ class FileController
         $fileExtension = strtolower(pathinfo($imageFile['name'], PATHINFO_EXTENSION));
         $randomFileName = bin2hex(random_bytes(8)) . '.' . $fileExtension;
         $logs = md5(bin2hex(random_bytes(5)));
-        $destinationPath = 'files_tmp/' . $randomFileName;
+        $destinationPath = '../files_tmp/' . $randomFileName;
 
 
         $image->resizeToWidth(600);
