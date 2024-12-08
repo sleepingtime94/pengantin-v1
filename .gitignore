@@ -1,2 +1,5 @@
+.env
+files
+files_tmp
 vendor
 composer.lock
