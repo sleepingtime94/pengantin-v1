@@ -349,7 +349,8 @@ function filePath($path)
     if (!$path) {
         return '/assets/img/thumb.jpg';
     } else {
-        return '/files/' . $path;
+
+        return getImagePath($path);
     }
 }
 
@@ -376,6 +377,15 @@ function fileCategory($value)
             return "DOKUMEN LAINNYA";
             break;
     }
+}
+
+function getImagePath($path)
+{
+    $namaFile = basename($path, '.jpg');
+    $namaFile = basename($namaFile, '.jpeg');
+    $namaFile = basename($namaFile, '.png');
+
+    return '/images/' . $namaFile;
 }
 ?>
 

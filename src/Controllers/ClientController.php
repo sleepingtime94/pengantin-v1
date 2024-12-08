@@ -46,9 +46,9 @@ class ClientController
         if ($nullOrEmptyCount > 0) {
             echo json_encode(['status' => 'error', 'message' => 'MOHON ISI DENGAN LENGKAP SEMUA DATA']);
         } else {
-            echo json_encode(['status' => 'success', 'message' => 'PERMOHONAN DITERIMA MENUNGGU DIVERIFIKASI']);
             $this->productModel->createOne($params);
             $this->moveFile($req->logs);
+            echo json_encode(['status' => 'success', 'message' => 'PERMOHONAN DITERIMA MENUNGGU DIVERIFIKASI']);
         }
     }
 

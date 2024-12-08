@@ -56,7 +56,7 @@ function uploadFile(file) {
   $("#progressBar").css("width", "0%");
 
   let category;
-  const logs = $(".product-register").data("temp");
+  const logs = $("#register-form").data("temp");
   const fileCat = $("#file-category").val();
   const formData = new FormData();
 
@@ -181,20 +181,16 @@ $("#submit-form").click(function () {
       id_user,
       lk_nik,
       lk_kk,
-      lk_name: lk_name.toUpperCase(),
+      lk_name,
       lk_phone,
-      lk_address: lk_address.toUpperCase(),
+      lk_address,
       pr_nik,
       pr_kk,
-      pr_name: pr_name.toUpperCase(),
+      pr_name,
       pr_phone,
-      pr_address: pr_address.toUpperCase(),
-      notes: notes.toUpperCase(),
-      address: address.toUpperCase(),
-    },
-    beforeSend: function () {
-      $("#progressBar").attr("aria-valuenow", 0);
-      $("#progressBar").css("width", "0%");
+      pr_address,
+      notes,
+      address,
     },
     xhr: function () {
       var xhr = new window.XMLHttpRequest();

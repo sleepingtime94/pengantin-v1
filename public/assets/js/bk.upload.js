@@ -103,10 +103,16 @@ function saveFileBK(file) {
         $("#product-valid").removeClass("disabled");
       }
 
-      $(".images-bk").attr("src", `/files/${item.path}`);
+      $(".images-bk").attr("src", removeFileExtension(item.path));
     },
     error: function (jqXHR, textStatus, errorThrown) {
       console.error(textStatus, errorThrown);
     },
   });
+}
+
+function removeFileExtension(path) {
+  const parts = path.split("/");
+  const namaFile = parts[parts.length - 1].split(".")[0];
+  return "/images/" + namaFile;
 }

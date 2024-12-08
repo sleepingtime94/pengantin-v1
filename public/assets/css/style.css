@@ -53,3 +53,40 @@ body {
     content: '*';
     color: red;
 }
+
+
+.dropzone {
+    aspect-ratio: 16/9;
+    border: dashed 1px #ccc;
+    background-color: #f4f5f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    width: 100%;
+    height: 10vh;
+}
+
+.dropzone:hover {
+    background-color: #e7e9ee;
+    transition: background-color 0.3s ease;
+}
+
+.images-lk,
+.images-pr {
+    aspect-ratio: 16/9;
+    height: 25vh;
+    object-fit: cover;
+}
+
+.images-bk {
+    aspect-ratio: 16/9;
+    height: 60vh;
+    object-fit: cover;
+}
+
+
+.images-doc {
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}

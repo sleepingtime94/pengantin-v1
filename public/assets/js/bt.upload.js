@@ -103,13 +103,19 @@ function saveFileBiodata(file) {
       const gender = $('input[name="exampleRadios"]:checked').val();
       const item = JSON.parse(response);
       if (gender == "lk") {
-        $(".images-lk").attr("src", `/files/${item.path}`);
+        $(".images-lk").attr("src", removeFileExtension(item.path));
       } else if (gender == "pr") {
-        $(".images-pr").attr("src", `/files/${item.path}`);
+        $(".images-pr").attr("src", removeFileExtension(item.path));
       }
     },
     error: function (jqXHR, textStatus, errorThrown) {
       console.error(textStatus, errorThrown);
     },
   });
+}
+
+function removeFileExtension(path) {
+  const parts = path.split("/");
+  const namaFile = parts[parts.length - 1].split(".")[0];
+  return "/images/" + namaFile;
 }

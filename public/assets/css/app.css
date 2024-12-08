@@ -111,14 +111,14 @@ body {
   object-fit: cover;
 }
 
-.required::before {
-  content: "* ";
-  color: red;
-}
 
 .images-doc {
   aspect-ratio: 16/9;
   object-fit: cover;
+}
+.required::before {
+  content: "* ";
+  color: red;
 }
 
 #loading {
