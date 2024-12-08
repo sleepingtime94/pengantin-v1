@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+body {
+    margin: auto;
+    background-color: #ecf0f5;
+}
+
+* {
+    font-family: "Poppins", sans-serif;
+    text-transform: uppercase !important;
+}
+
+.fst-captcha {
+    font-family: "Special Elite", sans-serif;
+    font-weight: 400;
+}
+
+.btn:hover {
+    transition: all 0.5s ease-in-out !important;
+}
+
+.header {
+    color: #fff;
+    background-color: #3c8dbc;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.smaller {
+    font-size: 7pt;
+}
+
+.content {
+    padding: 1rem;
+}
+
+.form-floating label,
+#captchaInput::placeholder {
+    color: rgb(126, 126, 126) !important;
+    font-size: small !important;
+    letter-spacing: 1px !important;
+}
+
+.input-custom input,
+.input-custom textarea {
+    border: none !important;
+    border-bottom: solid 1px #e7e7e7 !important;
+}
+
+.required::before {
+    content: '*';
+    color: red;
+}
